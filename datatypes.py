@@ -29,3 +29,30 @@ print(tensor)
 # Ploting the tensor data as colors
 plt.imshow(tensor, interpolation="nearest")
 plt.show()
+
+# Dims
+
+print(vector.shape)
+len(vector)
+print(matrix.shape)
+len(matrix.shape)
+print(matrix.size)
+print(tensor.shape)
+print(tensor.size)
+
+
+A = matrix
+B = matrix.T
+C = A + B # Error because of dims
+
+A = np.array([[1,2], [3,4], [5,6]])
+B = np.array([[6,5], [4,3], [2,1]])
+C = A + B
+print(C)
+
+# Broadcasting
+D = matrix + scalar
+print(D)
+
+E = A + [1,2]
+print(E)
