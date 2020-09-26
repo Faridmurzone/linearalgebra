@@ -21,3 +21,25 @@ def graphVectors(vecs, cols, alpha = 1):
                    scale_units = 'xy',
                    scale = 1, 
                    alpha = alpha)
+        
+
+def graphMatrix(matrix, vectorCol=['red', 'blue']):
+    # circulo unitario
+    x = np.linspace(-1,1,100000)
+    y = np.sqrt(1-(x**2))
+    
+    # circulo unitario transformado
+    x1 = matrix[0,0]*x + matrix[0,1]*y
+    y1 = matrix[1,0]*x + matrix[1,1]*y
+    x1_neg = matrix[0,0]*x - matrix[0,1]*y
+    y1_neg = matrix[1,0]*x - matrix[1,1]*y
+    
+    
+    # vectores
+    u1 = [matrix[0,0], matrix[1,0]]
+    v1 = [matrix[0,1], matrix[1,1]]
+    
+    graphVectores([u1, v1], col=[vectorCol[0], vectorCol[1]])
+    plt.plot(x1, y1, 'green', alpha = 0.7)
+    plt.plot(x1_neg, y1_neg, 'green', alpha = 0.7)
+
