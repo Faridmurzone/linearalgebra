@@ -1,3 +1,3 @@
 # Linear Algebra
 
-Repo for linear algebra study.
+Repo for linear algebra study...
